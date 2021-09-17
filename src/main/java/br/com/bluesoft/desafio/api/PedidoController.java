@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import br.com.bluesoft.desafio.model.Pedido;
-import br.com.bluesoft.desafio.model.Produto;
+import br.com.bluesoft.desafio.model.ProdutoPedido;
 import br.com.bluesoft.desafio.repository.PedidoRepository;
 
 @RestController
@@ -31,7 +31,9 @@ public class PedidoController {
     @PostMapping
     public Iterable<Pedido> setPedido(List<ProdutoPedido> produtos){
         List<Pedido> pedidos = new ArrayList<Pedido>();
-        
+        PedidoGenerator pedidoGenerator = new PedidoGenerator(produtos);
+        pedidoGenerator.gett
+        return pedidos;
     }
     
 }

@@ -3,12 +3,15 @@ package br.com.bluesoft.desafio.model;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
 public class Pedido {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idPedido;
 
     private Fornecedor fornecedor;
@@ -35,9 +38,8 @@ public class Pedido {
         this.fornecedor = fornecedor;
     }
 
-    public void setProdutos(List<Produto> produtos){
+    public void setProdutos(List<ProdutoPedido> produtos){
         this.produtos.addAll(produtos);
     }
-
 
 }
