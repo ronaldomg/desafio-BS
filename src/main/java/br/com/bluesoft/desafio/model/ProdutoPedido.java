@@ -1,21 +1,13 @@
 package br.com.bluesoft.desafio.model;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Entity
 public class ProdutoPedido {
-    @Id
-    private Pedido pedido;
-    @Id
     private Produto produto;
     private Float quantidade;
     private Float valorUN;
     private Float valorTotal;
-
-    public Pedido getPedido(){
-        return pedido;
-    }
 
     public Produto getProduto(){
         return produto;
@@ -31,10 +23,6 @@ public class ProdutoPedido {
 
     public float getValorTotal(){
         return valorTotal;
-    }
-
-    public void setPedido(Pedido pedido){
-        this.pedido = pedido;
     }
 
     public void setProduto(Produto produto){

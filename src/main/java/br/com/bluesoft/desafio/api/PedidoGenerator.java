@@ -53,7 +53,7 @@ public class PedidoGenerator {
                 List<ProdutoPedido> produtos = p.getProdutos();
                 Float valorUN = pf.getPrecos().listIterator().next().getPreco();
                 pp.setValorUN(valorUN);
-                pp.setPedido(p);
+                //pp.setPedido(p);
                 produtos.add(pp);
                 p.setProdutos(produtos);
         }else{
