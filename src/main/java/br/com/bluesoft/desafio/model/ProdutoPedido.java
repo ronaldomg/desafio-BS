@@ -9,8 +9,11 @@ import javax.persistence.Id;
 public class ProdutoPedido {
     @ManyToOne
     @JoinColumn(name="idPedido")
+    @Id
     private Pedido pedido;
-    @id
+    @ManyToOne
+    @JoinColumn(name='gtin')
+    @Id
     private Produto produto;
     private Float quantidade;
     private Float valorUN;
