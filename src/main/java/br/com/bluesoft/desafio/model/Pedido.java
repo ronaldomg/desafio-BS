@@ -1,6 +1,6 @@
 package br.com.bluesoft.desafio.model;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -22,7 +22,7 @@ public class Pedido {
     private Fornecedor fornecedor;
     @OneToMany(mappedBy = "pedido", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
-    private List<ProdutoPedido> produtos;
+    private ArrayList<ProdutoPedido> produtos;
 
     public Integer getIdPedido(){
         return idPedido;
@@ -32,7 +32,7 @@ public class Pedido {
         return fornecedor;
     }
 
-    public List<ProdutoPedido> getProdutos(){
+    public ArrayList<ProdutoPedido> getProdutos(){
         return produtos;
     }
 
@@ -44,7 +44,7 @@ public class Pedido {
         this.fornecedor = fornecedor;
     }
 
-    public void setProdutos(List<ProdutoPedido> produtos){
+    public void setProdutos(ArrayList<ProdutoPedido> produtos){
         this.produtos.addAll(produtos);
     }
 
