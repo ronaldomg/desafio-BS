@@ -1,0 +1,16 @@
+/home/ronaldomg/desafio-pedidos/src/main/java/br/com/bluesoft/desafio/integration/entity/Preco.java
+/home/ronaldomg/desafio-pedidos/src/main/java/br/com/bluesoft/desafio/repository/ProdutoRepository.java
+/home/ronaldomg/desafio-pedidos/src/main/java/br/com/bluesoft/desafio/repository/PedidoRepository.java
+/home/ronaldomg/desafio-pedidos/src/main/java/br/com/bluesoft/desafio/integration/Cotacao.java
+/home/ronaldomg/desafio-pedidos/src/main/java/br/com/bluesoft/desafio/api/PedidoGenerator.java
+/home/ronaldomg/desafio-pedidos/src/main/java/br/com/bluesoft/desafio/api/ProdutoController.java
+/home/ronaldomg/desafio-pedidos/src/main/java/br/com/bluesoft/desafio/model/Fornecedor.java
+/home/ronaldomg/desafio-pedidos/src/main/java/br/com/bluesoft/desafio/DesafioApplication.java
+/home/ronaldomg/desafio-pedidos/src/main/java/br/com/bluesoft/desafio/api/ApiExceptionHandler.java
+/home/ronaldomg/desafio-pedidos/src/main/java/br/com/bluesoft/desafio/model/ProdutoPedido.java
+/home/ronaldomg/desafio-pedidos/src/main/java/br/com/bluesoft/desafio/view/ErroView.java
+/home/ronaldomg/desafio-pedidos/src/main/java/br/com/bluesoft/desafio/model/Pedido.java
+/home/ronaldomg/desafio-pedidos/src/main/java/br/com/bluesoft/desafio/integration/entity/ProdutoFornecedor.java
+/home/ronaldomg/desafio-pedidos/src/main/java/br/com/bluesoft/desafio/model/Produto.java
+/home/ronaldomg/desafio-pedidos/src/main/java/br/com/bluesoft/desafio/api/PedidoController.java
+/home/ronaldomg/desafio-pedidos/src/main/java/br/com/bluesoft/desafio/integration/entity/CotacaoProduto.java

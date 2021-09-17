@@ -1,0 +1,17 @@
+br/com/bluesoft/desafio/model/Fornecedor.class
+br/com/bluesoft/desafio/model/ProdutoPedido.class
+br/com/bluesoft/desafio/view/ErroView.class
+br/com/bluesoft/desafio/api/PedidoController.class
+br/com/bluesoft/desafio/repository/ProdutoRepository.class
+br/com/bluesoft/desafio/integration/entity/Preco.class
+br/com/bluesoft/desafio/api/ProdutoController.class
+br/com/bluesoft/desafio/integration/entity/ProdutoFornecedor.class
+br/com/bluesoft/desafio/model/Pedido.class
+br/com/bluesoft/desafio/api/PedidoGenerator.class
+br/com/bluesoft/desafio/model/Produto.class
+br/com/bluesoft/desafio/DesafioApplication.class
+br/com/bluesoft/desafio/repository/PedidoRepository.class
+br/com/bluesoft/desafio/integration/entity/CotacaoProduto.class
+br/com/bluesoft/desafio/api/ApiExceptionHandler.class
+br/com/bluesoft/desafio/api/PedidoGenerator$CotacaoException.class
+br/com/bluesoft/desafio/integration/Cotacao.class
