@@ -23,4 +23,5 @@ public class ProdutoController {
     public Iterable<Produto> findAll() {
         return produtoRepository.findAll();
     }
+    
 }
