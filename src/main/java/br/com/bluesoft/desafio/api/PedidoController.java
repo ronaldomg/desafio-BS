@@ -32,7 +32,12 @@ public class PedidoController {
     public Iterable<Pedido> setPedido(List<ProdutoPedido> produtos){
         List<Pedido> pedidos = new ArrayList<Pedido>();
         PedidoGenerator pedidoGenerator = new PedidoGenerator(produtos);
-        pedidoGenerator.gett
+        pedidos.addAll(pedidoGenerator.getPedidos());
+        if (pedidos.size() == 0){
+
+        }else{
+            pedidoRepository.saveAll(pedidos);
+        }
         return pedidos;
     }
     

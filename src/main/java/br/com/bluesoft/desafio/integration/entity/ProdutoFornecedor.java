@@ -1,41 +1,71 @@
 package br.com.bluesoft.desafio.integration.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProdutoFornecedor {
 
-
-
   private String nome;
   private String cnpj;
-  private Preco value;
-
-  public Quote() {
+  private List<Preco> precos;
+  
+  public ProdutoFornecedor(){
+    this.nome = "";
+    this.cnpj = "";
+    this.precos = new ArrayList<>();
   }
 
-  public String getType() {
-    return type;
+  public ProdutoFornecedor(String nome, String cnpj, Preco preco){
+    this.nome = nome;
+    this.cnpj = cnpj;
+    this.precos = new ArrayList<>();
+    this.precos.add(preco);
   }
 
-  public void setType(String type) {
-    this.type = type;
+  public String getNome() {
+    return nome;
   }
 
-  public Value getValue() {
-    return value;
+  public String getCnpj() {
+    return cnpj;
   }
 
-  public void setValue(Value value) {
-    this.value = value;
+  public List<Preco> getPrecos() {
+    return precos;
   }
 
+  public void setNome(String nome){
+      this.nome = nome;
+  }
+
+  public void setCnpj(String cnpj){
+    this.cnpj = cnpj;
+  }
+
+  public void setPrecos(List<Preco> precos){
+    this.precos = precos;
+  }
+
+  public boolean isEmpty(){
+      if ((this.nome.equals("")) &&
+      (this.cnpj.equals("")) &&
+      (this.precos.size() == 0)){
+          return true;
+      }else{
+          return false;
+      }
+  }
   @Override
   public String toString() {
-    return "Quote{" +
-        "type='" + type + '\'' +
-        ", value=" + value +
+    return "{" +
+        "nome='" + nome + '\'' +
+        ", cnpj='" + cnpj + '\'' +
+        ", precos='" + precos + '\'' +
         '}';
   }
-}COPY
+
 
 }
