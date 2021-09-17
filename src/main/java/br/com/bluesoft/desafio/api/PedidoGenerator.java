@@ -45,7 +45,6 @@ public class PedidoGenerator {
     }
 
     private void addPedidoFornecedor(ProdutoPedido pp, ProdutoFornecedor pf){
-        Integer pedidoId = 0;
         Pedido p = pedidos.stream()
         .filter(pedido -> pf.getCnpj().equals(pedido.getFornecedor().getCnpj()))
         .findAny()
@@ -57,7 +56,6 @@ public class PedidoGenerator {
                 pp.setPedido(p);
                 produtos.add(pp);
                 p.setProdutos(produtos);
-                pedidoId = p.getIdPedido();
         }else{
             Fornecedor fornecedor = new Fornecedor();
             fornecedor.setCNPJ(pf.getCnpj());
@@ -71,12 +69,5 @@ public class PedidoGenerator {
             pedidos.add(p);
         }
     }
-    
-    private class CotacaoException extends Exception{
-		String message;
-		public CotacaoException (String message){
-			this.message = message;
-		}
-	}
-
+   
 }

@@ -1,7 +1,5 @@
 package br.com.bluesoft.desafio.integration;
 
-import java.util.List;
-
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.web.client.RestTemplate;
 
