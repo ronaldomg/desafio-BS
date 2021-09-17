@@ -12,7 +12,7 @@ public class ProdutoPedido {
     @Id
     private Pedido pedido;
     @ManyToOne
-    @JoinColumn(name='gtin')
+    @JoinColumn(name="gtin")
     @Id
     private Produto produto;
     private Float quantidade;
