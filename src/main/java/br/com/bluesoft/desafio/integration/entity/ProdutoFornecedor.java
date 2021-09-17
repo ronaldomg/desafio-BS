@@ -1,7 +1,6 @@
 package br.com.bluesoft.desafio.integration.entity;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -10,7 +9,7 @@ public class ProdutoFornecedor {
 
   private String nome;
   private String cnpj;
-  private List<Preco> precos;
+  private ArrayList<Preco> precos;
   
   public ProdutoFornecedor(){
     this.nome = "";
@@ -33,7 +32,7 @@ public class ProdutoFornecedor {
     return cnpj;
   }
 
-  public List<Preco> getPrecos() {
+  public ArrayList<Preco> getPrecos() {
     return precos;
   }
 
@@ -45,7 +44,7 @@ public class ProdutoFornecedor {
     this.cnpj = cnpj;
   }
 
-  public void setPrecos(List<Preco> precos){
+  public void setPrecos(ArrayList<Preco> precos){
     this.precos = precos;
   }
 
