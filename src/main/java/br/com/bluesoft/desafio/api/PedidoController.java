@@ -12,13 +12,17 @@ import java.util.ArrayList;
 import br.com.bluesoft.desafio.model.Pedido;
 import br.com.bluesoft.desafio.model.ProdutoPedido;
 import br.com.bluesoft.desafio.repository.PedidoRepository;
+import br.com.bluesoft.desafio.repository.ProdutoRepository;
 
 @RestController
 @RequestMapping("/api/pedidos")
 public class PedidoController {
-    private PedidoRepository pedidoRepository;
-
     @Autowired
+    private PedidoRepository pedidoRepository;
+    private ProdutoRepository produtoRepository;
+
+
+    
     public PedidoController(PedidoRepository pedidoRepository) {
         this.pedidoRepository = pedidoRepository;
     }
@@ -31,7 +35,7 @@ public class PedidoController {
     @PostMapping
     public Iterable<Pedido> setPedido(List<ProdutoPedido> produtos){
         List<Pedido> pedidos = new ArrayList<Pedido>();
-        PedidoGenerator pedidoGenerator = new PedidoGenerator(produtos);
+        PedidoGenerator pedidoGenerator = new PedidoGenerator(produtos, produtoRepository);
         pedidos.addAll(pedidoGenerator.getPedidos());
         if (pedidos.size() == 0){
 

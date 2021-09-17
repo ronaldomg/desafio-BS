@@ -10,13 +10,14 @@ import br.com.bluesoft.desafio.model.Fornecedor;
 import br.com.bluesoft.desafio.model.Pedido;
 import br.com.bluesoft.desafio.model.Produto;
 import br.com.bluesoft.desafio.model.ProdutoPedido;
+import br.com.bluesoft.desafio.repository.ProdutoRepository;
 
 public class PedidoGenerator {
     private List<Pedido> pedidos;
     private List<ProdutoPedido> produtos;
     private List<Produto> produtosSemCotacao;
 
-    public PedidoGenerator(List<ProdutoPedido> produtos){
+    public PedidoGenerator(List<ProdutoPedido> produtos, ProdutoRepository produtoRepository){
         this.produtos.addAll(produtos);
         this.pedidos.clear();
         createPedidos();
