@@ -3,24 +3,18 @@ package br.com.bluesoft.desafio.model;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
+import javax.persistence.Id;
 
 @Entity
 public class ProdutoPedido {
     @ManyToOne
-    @JoinColumn(name="idPedido", nullable=false)
+    @JoinColumn(name="idPedido")
     private Pedido pedido;
+    @id
     private Produto produto;
     private Float quantidade;
     private Float valorUN;
     private Float valorTotal;
-
-    public ProdutoPedido(Pedido pedido, Produto produto, Float quantidade, Float valorUN){
-        this.pedido = pedido;
-        this.produto = produto;
-        this.quantidade = quantidade;
-        this.valorUN = valorUN;
-        this.valorTotal = valorUN*quantidade;
-    }
 
     public Pedido getPedido(){
         return pedido;

@@ -10,8 +10,6 @@ import br.com.bluesoft.desafio.model.Fornecedor;
 import br.com.bluesoft.desafio.model.Pedido;
 import br.com.bluesoft.desafio.model.Produto;
 import br.com.bluesoft.desafio.model.ProdutoPedido;
-import br.com.bluesoft.desafio.repository.PedidoRepository;
-import br.com.bluesoft.desafio.view.ErroView;
 
 public class PedidoGenerator {
     private List<Pedido> pedidos;
