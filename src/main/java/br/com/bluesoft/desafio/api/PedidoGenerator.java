@@ -1,8 +1,8 @@
 package br.com.bluesoft.desafio.api;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
-
+import java.util.Set;
 
 import br.com.bluesoft.desafio.integration.Cotacao;
 import br.com.bluesoft.desafio.integration.entity.ProdutoFornecedor;
@@ -51,7 +51,7 @@ public class PedidoGenerator {
         .findAny()
         .orElse(new Pedido() );
         if (p.getFornecedor().getCnpj().equals(pf.getCnpj())){
-                List<ProdutoPedido> produtos = p.getProdutos();
+                Set<ProdutoPedido> produtos = p.getProdutos();
                 Float valorUN = pf.getPrecos().listIterator().next().getPreco();
                 pp.setValorUN(valorUN);
                 //pp.setPedido(p);
@@ -61,7 +61,7 @@ public class PedidoGenerator {
             Fornecedor fornecedor = new Fornecedor();
             fornecedor.setCNPJ(pf.getCnpj());
             fornecedor.setNome(pf.getNome());
-            ArrayList<ProdutoPedido> produtos = new ArrayList<ProdutoPedido>();
+            Set<ProdutoPedido> produtos = new HashSet<ProdutoPedido>();
             Float valorUN = pf.getPrecos().listIterator().next().getPreco();
             pp.setValorUN(valorUN);
             produtos.add(pp);
