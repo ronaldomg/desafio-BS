@@ -15,7 +15,7 @@ public class PedidoGenerator {
     private Set<ProdutoPedido> produtos = new HashSet<>();
     private Set<Produto> produtosSemCotacao = new HashSet<>();
 
-    public PedidoGenerator(Set<ProdutoPedido> produtos){
+    public PedidoGenerator (Set<ProdutoPedido> produtos){
         this.produtos.addAll(produtos);
         this.pedidos.clear();
         createPedidos();
@@ -50,9 +50,9 @@ public class PedidoGenerator {
         .orElse(new Pedido() );
         if (p.getFornecedor().getCnpj().equals(pf.getCnpj())){
                 Set<ProdutoPedido> produtos = p.getProdutos();
-                Float valorUN = pf.getPrecos().listIterator().next().getPreco();
+                Float valorUN = pf.getPrecos().iterator().next().getPreco();
                 pp.setValorUN(valorUN);
-                //pp.setPedido(p);
+                pp.setPedido(p);
                 produtos.add(pp);
                 p.setProdutos(produtos);
         }else{
