@@ -1,6 +1,6 @@
 package br.com.bluesoft.desafio.api;
 
-import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,20 +8,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import br.com.bluesoft.desafio.model.Pedido;
 import br.com.bluesoft.desafio.model.ProdutoPedido;
 import br.com.bluesoft.desafio.repository.PedidoRepository;
-import br.com.bluesoft.desafio.repository.ProdutoRepository;
 
 @RestController
 @RequestMapping("/api/pedidos")
 public class PedidoController {
     @Autowired
     private PedidoRepository pedidoRepository;
-    private ProdutoRepository produtoRepository;
-
-
     
     public PedidoController(PedidoRepository pedidoRepository) {
         this.pedidoRepository = pedidoRepository;
@@ -33,9 +29,9 @@ public class PedidoController {
     }
 
     @PostMapping
-    public Iterable<Pedido> setPedido(List<ProdutoPedido> produtos){
-        List<Pedido> pedidos = new ArrayList<Pedido>();
-        PedidoGenerator pedidoGenerator = new PedidoGenerator(produtos, produtoRepository);
+    public Iterable<Pedido> setPedido(Set<ProdutoPedido> produtos){
+        Set<Pedido> pedidos = new HashSet<>();
+        PedidoGenerator pedidoGenerator = new PedidoGenerator(produtos);
         pedidos.addAll(pedidoGenerator.getPedidos());
         if (pedidos.size() == 0){
 

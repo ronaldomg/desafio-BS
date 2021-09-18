@@ -1,7 +1,6 @@
 package br.com.bluesoft.desafio.api;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import br.com.bluesoft.desafio.integration.Cotacao;
@@ -10,14 +9,13 @@ import br.com.bluesoft.desafio.model.Fornecedor;
 import br.com.bluesoft.desafio.model.Pedido;
 import br.com.bluesoft.desafio.model.Produto;
 import br.com.bluesoft.desafio.model.ProdutoPedido;
-import br.com.bluesoft.desafio.repository.ProdutoRepository;
 
 public class PedidoGenerator {
-    private List<Pedido> pedidos;
-    private List<ProdutoPedido> produtos;
-    private List<Produto> produtosSemCotacao;
+    private Set<Pedido> pedidos = new HashSet<>();
+    private Set<ProdutoPedido> produtos = new HashSet<>();
+    private Set<Produto> produtosSemCotacao = new HashSet<>();
 
-    public PedidoGenerator(List<ProdutoPedido> produtos, ProdutoRepository produtoRepository){
+    public PedidoGenerator(Set<ProdutoPedido> produtos){
         this.produtos.addAll(produtos);
         this.pedidos.clear();
         createPedidos();
@@ -26,10 +24,10 @@ public class PedidoGenerator {
         }
     }
 
-    public List<Pedido> getPedidos(){
+    public Set<Pedido> getPedidos(){
         return pedidos;
     }
-    public List<Produto> getProdutosSemCotacao(){
+    public Set<Produto> getProdutosSemCotacao(){
         return produtosSemCotacao;
     }
 
@@ -62,7 +60,7 @@ public class PedidoGenerator {
             fornecedor.setCNPJ(pf.getCnpj());
             fornecedor.setNome(pf.getNome());
             Set<ProdutoPedido> produtos = new HashSet<ProdutoPedido>();
-            Float valorUN = pf.getPrecos().listIterator().next().getPreco();
+            Float valorUN = pf.getPrecos().iterator().next().getPreco();
             pp.setValorUN(valorUN);
             produtos.add(pp);
             p.setFornecedor(fornecedor);
