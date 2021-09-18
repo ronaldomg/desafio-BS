@@ -1,7 +1,6 @@
 package br.com.bluesoft.desafio.integration.entity;
 
 import java.util.HashSet;
-import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -10,7 +9,7 @@ public class ProdutoFornecedor {
 
   private String nome;
   private String cnpj;
-  private Set<Preco> precos = new HashSet<>();
+  private HashSet<Preco> precos = new HashSet<>();
   
   public ProdutoFornecedor(){
     this.nome = "";
@@ -33,7 +32,7 @@ public class ProdutoFornecedor {
     return cnpj;
   }
 
-  public Set<Preco> getPrecos() {
+  public HashSet<Preco> getPrecos() {
     return precos;
   }
 
@@ -45,7 +44,7 @@ public class ProdutoFornecedor {
     this.cnpj = cnpj;
   }
 
-  public void setPrecos(Set<Preco> precos){
+  public void setPrecos(HashSet<Preco> precos){
     this.precos = precos;
   }
 

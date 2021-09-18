@@ -1,7 +1,5 @@
 package br.com.bluesoft.desafio.api;
 
-import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +16,7 @@ import br.com.bluesoft.desafio.repository.PedidoRepository;
 public class PedidoController {
     @Autowired
     private PedidoRepository pedidoRepository;
-    
+
     public PedidoController(PedidoRepository pedidoRepository) {
         this.pedidoRepository = pedidoRepository;
     }
@@ -29,8 +27,8 @@ public class PedidoController {
     }
 
     @PostMapping
-    public Iterable<Pedido> setPedido(Set<ProdutoPedido> produtos){
-        Set<Pedido> pedidos = new HashSet<>();
+    public Iterable<Pedido> setPedido(HashSet<ProdutoPedido> produtos){
+        HashSet<Pedido> pedidos = new HashSet<>();
         PedidoGenerator pedidoGenerator = new PedidoGenerator(produtos);
         pedidos.addAll(pedidoGenerator.getPedidos());
         if (pedidos.size() == 0){

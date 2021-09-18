@@ -1,20 +1,19 @@
 package br.com.bluesoft.desafio.integration.entity;
 
 import java.util.HashSet;
-import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CotacaoProduto {
     
-  private Set<ProdutoFornecedor> cotacoesProduto = new HashSet<>();
+  private HashSet<ProdutoFornecedor> cotacoesProduto = new HashSet<>();
 
-   public Set<ProdutoFornecedor> getCotacoesProduto() {
+   public HashSet<ProdutoFornecedor> getCotacoesProduto() {
     return cotacoesProduto;
   }
 
-  public void setCotacoesProduto(Set<ProdutoFornecedor> cotacoesProduto){
+  public void setCotacoesProduto(HashSet<ProdutoFornecedor> cotacoesProduto){
     this.cotacoesProduto = cotacoesProduto;
   }
 
