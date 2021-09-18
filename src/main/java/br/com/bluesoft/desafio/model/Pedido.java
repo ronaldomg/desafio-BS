@@ -21,8 +21,11 @@ public class Pedido {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cnpj", nullable = false)
     private Fornecedor fornecedor;
-    @OneToMany(mappedBy = "pedido", fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL)
+    // @OneToMany(mappedBy = "pedido", fetch = FetchType.LAZY,
+    //         cascade = CascadeType.ALL)
+    @ElementCollection
+    @CollectionTable(name="produtopedido", joinColumns=@JoinColumn(name="idPedido"))
+@Column(name="produtps")
     private Set<ProdutoPedido> produtos = new HashSet<>();
 
     public Integer getIdPedido(){
