@@ -4,6 +4,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -24,8 +27,8 @@ public class Pedido {
     // @OneToMany(mappedBy = "pedido", fetch = FetchType.LAZY,
     //         cascade = CascadeType.ALL)
     @ElementCollection
-    @CollectionTable(name="produtopedido", joinColumns=@JoinColumn(name="idPedido"))
-@Column(name="produtps")
+    @CollectionTable(name="produtopedido", joinColumns = @JoinColumn(name="idPedido"))
+@Column(name="produtos")
     private Set<ProdutoPedido> produtos = new HashSet<>();
 
     public Integer getIdPedido(){
