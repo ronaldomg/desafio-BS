@@ -11,9 +11,18 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class ProdutoPedido {
+    // @Id @GeneratedValue
+    // private Long produtosId;
+    // private Pedido pedido;
+    // // private Integer idPedido;
+    // // @Id
+    // //private String produtoGtin;
+
+    // private Produto produto;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long produtoPedidoId;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "idPedido", nullable = false)

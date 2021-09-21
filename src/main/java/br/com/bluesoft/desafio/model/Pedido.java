@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+// import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -24,12 +25,11 @@ public class Pedido {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cnpj", nullable = false)
     private Fornecedor fornecedor;
-    // @OneToMany(mappedBy = "pedido", fetch = FetchType.LAZY,
-    //         cascade = CascadeType.ALL)
-    @ElementCollection
-    @CollectionTable(name="produtopedido", joinColumns = @JoinColumn(name="idPedido"))
-@Column(name="produtos")
-    private Set<ProdutoPedido> produtos = new HashSet<>();
+    @OneToMany(mappedBy = "pedido", fetch = FetchType.LAZY,
+             cascade = CascadeType.ALL)
+    // @ElementCollection
+    // @CollectionTable(name="produtopedido", joinColumns = @JoinColumn(name="idPedido"))
+    private Iterable<ProdutoPedido> produtos = new HashSet<>();
 
     public Integer getIdPedido(){
         return idPedido;
@@ -40,7 +40,7 @@ public class Pedido {
     }
 
     public Set<ProdutoPedido> getProdutos(){
-        return produtos;
+        return (Set<ProdutoPedido>) produtos;
     }
 
     public void setIdPedido(Integer idPedido){
@@ -52,7 +52,7 @@ public class Pedido {
     }
 
     public void setProdutos(Set<ProdutoPedido> produtos){
-        this.produtos.addAll(produtos);
+        this.produtos =  (Iterable<ProdutoPedido>) produtos;
     }
 
 }
